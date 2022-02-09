@@ -1,11 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
-import React, { useState } from "react";
 import Header from "./Header";
+import Main from "./Main";
 function App() {
   return (
     <div className="App">
       <Header></Header>
+      <Main></Main>
     </div>
   );
 }
