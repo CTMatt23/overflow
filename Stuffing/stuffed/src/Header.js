@@ -5,12 +5,17 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Paper from "@mui/material/Paper";
+import { useDispatch } from "react-redux";
 import { red } from "@mui/material/colors";
+import { fetchRestaurants } from "./store/restaurant/restaurantSlice";
+import logo from "./assets/logo-icon-2nd.png";
+
 const Header = () => {
+  const dispatch = useDispatch();
   return (
     <header>
       <div>
-        Stuffed
+        <img src={logo} />
         <Paper
           sx={{
             borderColor: red,
@@ -26,7 +31,14 @@ const Header = () => {
             placeholder="Turkey Club, McDouble, Chili dog..."
             inputProps={{ "aria-label": "search google maps" }}
           />
-          <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+          <IconButton
+            onClick={() => {
+              dispatch(fetchRestaurants("FU"));
+            }}
+            type="submit"
+            sx={{ p: "10px" }}
+            aria-label="search"
+          >
             <SearchIcon />
           </IconButton>
         </Paper>

@@ -1,11 +1,12 @@
 import React from "react";
 import "./Main.scss";
 import Map from "./Map";
+import MainSub from "./MainSub";
 const Main = () => {
   return (
-    <div>
+    <div className="flex-main-height">
       <Map></Map>
-      <p>pp</p>
+      <MainSub></MainSub>
     </div>
   );
 };
