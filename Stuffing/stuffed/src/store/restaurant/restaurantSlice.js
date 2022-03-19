@@ -25,12 +25,17 @@ export const restaurantSlice = createSlice({
   reducers: {
     setActive: (state, action) => {
       var getID = action.payload.res;
-      state.data.data.map((obj) =>
-        obj._id === getID ? { ...obj, isActive: true } : obj
-      );
-      state.data.data.map((obj) =>
-        obj._id === state.currentActive ? { ...obj, isActive: false } : obj
-      );
+
+      state.data.data.map((obj) => {
+        if (obj._id === getID) {
+          obj.isActive = true;
+        }
+      });
+      state.data.data.map((obj) => {
+        if (obj._id === state.currentActive) {
+          obj.isActive = false;
+        }
+      });
 
       state.currentActive = action.payload.res;
     },

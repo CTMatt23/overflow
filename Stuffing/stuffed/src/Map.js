@@ -41,7 +41,7 @@ const Map = () => {
     // Important! Always set the container height explicitly
     <div className="map">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
+        bootstrapURLKeys={{ key: "AIzaSyDygf49y18G3ICilEz_2uM_9ZW-bCP_B0w" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
